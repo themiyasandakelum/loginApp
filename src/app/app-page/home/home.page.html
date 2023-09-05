@@ -1,0 +1,33 @@
+<ion-header  class="ion-no-border">
+  <ion-toolbar>
+    <!-- <ion-title>login</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content background >
+  <ion-card class="ion-no-margin">
+    <ion-card-header>
+      <ion-card-title style="color:black;">
+     Log in system
+      </ion-card-title>
+      <ion-card-subtitle class="ion-text-lowercase">
+    
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="signin-btns">
+          <div>
+            <ion-button  expand="block" class="loginbtn" color="primary" (click)="gotoLoginpage()">
+            Login
+            </ion-button>
+          </div>
+          <div><span class="already">or</span></div>
+          <div class="divider"></div>
+          <div><span class="already">Already a user?</span></div>
+          <div>
+            <ion-button expand="block" color="dark" color="danger" (click)="signupUser()" >Sign Up</ion-button>
+          </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
