@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
-import { HttpService } from 'src/app/services/httpservices/http.service';
+import { HttpService } from 'src/app/shared/services/http.service';
 
 @Injectable({
   providedIn: 'root'
