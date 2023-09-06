@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavController } from '@ionic/angular';
-import { HttpClient } from '@angular/common/http';
-import { AuthService } from 'src/app/core/authservices/auth.service';
-import { UserService } from 'src/app/core/userservices/user.service';
+import { UserService } from '../../providers/user.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +12,7 @@ export class LoginPage implements OnInit {
 
 loginobj:any ={
   UserName:'',
-  Password:''
+  password:''
 };
 
   validationUserMessage ={
@@ -31,12 +28,11 @@ loginobj:any ={
   }
   
   validationFormUser: FormGroup;
-  constructor(public formbuider: FormBuilder, private router: Router, private nav: NavController,private http : HttpClient,
-              private authService : AuthService,private userService : UserService) { }
+  constructor(public formBuider: FormBuilder, private nav: NavController,private userService : UserService) { }
 
   ngOnInit() {
     
-  this.validationFormUser = this.formbuider.group({
+  this.validationFormUser = this.formBuider.group({
     userName: new FormControl("", Validators.compose([
       Validators.required,
       Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
@@ -51,7 +47,7 @@ loginobj:any ={
     this.nav.navigateForward(['signup'])
   }
 
-  LoginUser(){
+  loginUser(){
     let body = this.validationFormUser.value;
     this.userService.login(body)
   }

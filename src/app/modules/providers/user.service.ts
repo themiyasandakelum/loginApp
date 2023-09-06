@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AuthService } from '../authservices/auth.service';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { AuthService } from '../services/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +13,10 @@ data:any;
   //isLoggedIn = new BehaviorSubject(false);
 
   login(data){
-    debugger
-    this.authService.login(data).subscribe((res:any)=>{
-      debugger
+    this.authService.login(data).subscribe((res?:any)=>{
       this.user=res.output
-        localStorage.setItem('token', res.output.token);
-        localStorage.setItem('companyId',res.output.companyId)
+        localStorage.setItem('token', res?.output?.token);
+        localStorage.setItem('companyId',res?.output?.companyId)
         this.router.navigateByUrl('/homepage');
       
     }, (err) => {
@@ -27,7 +25,7 @@ data:any;
   }
 getUserDetails(){
   this.authService.getUserDetails().subscribe((res:any)=>{
-  this.data=res.output
+  this.data=res?.output
 })
   }
 }

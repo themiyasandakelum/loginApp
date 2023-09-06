@@ -5,9 +5,9 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { AuthInterceptor } from './core/intercepter/auth.interceptor';
+import { AuthInterceptor } from './services/intercepter/auth.interceptor';
 import { FormsModule } from '@angular/forms';
-import { ComponentModule } from './app-component/component.module';
+import { ComponentModule } from './modules/app-component/component.module'
 
 @NgModule({
   declarations: [AppComponent],

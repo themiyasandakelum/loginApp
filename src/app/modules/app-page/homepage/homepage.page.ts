@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CheckboxCustomEvent } from '@ionic/angular';
-import { UserService } from 'src/app/core/userservices/user.service';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.page.html',
@@ -8,7 +7,7 @@ import { UserService } from 'src/app/core/userservices/user.service';
 })
 export class HomepagePage implements OnInit {
   
-  constructor(private userService:UserService) { }
+  constructor() { }
 
   ngOnInit() {
   }

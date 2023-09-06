@@ -7,8 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { HomepagePageRoutingModule } from './homepage-routing.module';
 
 import { HomepagePage } from './homepage.page';
-import { ComponentModule } from 'src/app/app-component/component.module';
-import { UserViewComponent } from 'src/app/app-component/user-view/user-view.component';
+import { UserViewComponent } from '../../app-component/user-view/user-view.component';
 
 @NgModule({
   imports: [

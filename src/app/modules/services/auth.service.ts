@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
-import { environment } from 'src/environments/environment';
-import { HttpService } from '../httpservices/http.service';
+import { HttpService } from 'src/app/services/httpservices/http.service';
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  apiBaseUrl: string = environment.apiBaseUrl;
-  user: any;
   constructor(private httpService: HttpService, public router: Router) {
     
   }
