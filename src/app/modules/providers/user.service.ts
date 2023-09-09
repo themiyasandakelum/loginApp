@@ -7,16 +7,15 @@ import { AuthService } from '../services/auth.service';
   providedIn: 'root'
 })
 export class UserService {
-user
+user;
 data:any;
   constructor(private authService:AuthService,private router:Router) { }
-  //isLoggedIn = new BehaviorSubject(false);
 
   login(data){
     this.authService.login(data).subscribe((res?:any)=>{
-      this.user=res.output
-        localStorage.setItem('token', res?.output?.token);
-        localStorage.setItem('companyId',res?.output?.companyId)
+      this.user=res?.output;
+        localStorage.setItem('token', res?.output?.token||"");
+        localStorage.setItem('companyId',res?.output?.companyId||"");
         this.router.navigateByUrl('/homepage');
       
     }, (err) => {
@@ -25,7 +24,9 @@ data:any;
   }
 getUserDetails(){
   this.authService.getUserDetails().subscribe((res:any)=>{
-  this.data=res?.output
-})
+  this.data=res?.output;
+  }, (err) => {
+  console.log(err);
+    });
   }
 }

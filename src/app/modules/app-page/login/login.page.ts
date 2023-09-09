@@ -10,8 +10,8 @@ import { UserService } from '../../providers/user.service';
 })
 export class LoginPage implements OnInit {
 
-loginobj:any ={
-  UserName:'',
+loginObj:any ={
+  userName:'',
   password:''
 };
 
@@ -44,11 +44,11 @@ loginobj:any ={
   })
   }
   signUpUser(){ 
-    this.nav.navigateForward(['signup'])
+    this.nav.navigateForward(['signup']);
   }
 
   loginUser(){
     let body = this.validationFormUser.value;
-    this.userService.login(body)
+    this.userService.login(body);
   }
 }

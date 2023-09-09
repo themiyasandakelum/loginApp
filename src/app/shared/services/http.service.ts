@@ -19,8 +19,6 @@ export class HttpService {
   }
   get(method: string, params: any) {
     const url = this.baseUrl + method;
-    return this.http.get(url, {
-   
-    });
+    return this.http.get(url, {});
   }
 }
